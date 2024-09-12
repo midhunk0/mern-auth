@@ -5,7 +5,7 @@ const cors=require("cors");
 
 router.use(
     cors({
-        origin: "http://localhost:3000",
+        origin: process.env.FRONT_END_API,
         credentials: true,
     })
 )
