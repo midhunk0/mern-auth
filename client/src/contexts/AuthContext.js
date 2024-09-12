@@ -113,7 +113,6 @@ export const AuthProvider = ({ children }) => {
             });
 
             const result=await response.json();
-            console.log(result, response);
             if(response.ok){
                 setUser(result.user)
             }

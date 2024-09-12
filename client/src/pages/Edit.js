@@ -25,7 +25,6 @@ function Edit(){
         e.preventDefault();
         try{
             const res=await updateProfile(data);
-            console.log(res);
             if(res.ok){
                 toast.success(res.message);
                 navigate("/dashboard");
