@@ -5,7 +5,6 @@
 *{
     margin: 0;
     padding: 0;
-    overflow: hidden;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -15,7 +14,7 @@
     width: 100%;
     height: 100vh;
     overflow: hidden;
-    background: light-dark(#DDDDDD, #222831);
+    background: light-dark(#EDEDED, #222831);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -26,7 +25,7 @@
 
 @media (prefers-color-scheme: light) {
     .main-div {
-        background: linear-gradient(90deg, rgba(221, 221, 221, 1) 58%, rgba(221, 221, 221, 0.1) 100%);
+        background: linear-gradient(90deg, rgba(237, 237, 237, 1) 58%, rgba(237, 237, 237, 0.1) 100%);
     }
 }
 
@@ -44,26 +43,23 @@
     height: 100%;
     object-fit: cover; 
     object-position: center; 
-    
 }
 
-.buttons-div{
+.auth-text{
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    color: light-dark(#222831, #EDEDED);
+    z-index: 1;
+}
+
+.buttons-div, .form-div{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 20px;
-    background: light-dark(#DDDDDD, #222831);
-    width: 40vw;
-}
-
-.form-div{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    background: light-dark(#DDDDDD, #222831);
+    background: light-dark(#EDEDED, #222831);
     width: 40vw;
 }
 
@@ -87,16 +83,15 @@ a{
 }
 
 .input{
-    background: light-dark(#222831, #DDDDDD);
+    background: light-dark(#DDDDDD, #EDEDED);
     color: #F05454;
     padding: 15px;
-    outline: none;
-    border: none;
     border-radius: 4px;
+    border: 1px solid #30475E;
 }
 
 .input::placeholder{
-    color: light-dark(#DDDDDD, #222831);
+    color: #222831;
 }
 
 .password{
@@ -110,19 +105,11 @@ a{
 }
 
 .password img{
-    display: flex;
     width: 24px;
     height: 24px;
     position: absolute;
     right: 10px;
     cursor: pointer;
-    filter: invert(0);
-}
-
-@media (prefers-color-scheme: light){
-    .password img{
-        filter: invert(1);
-    }
 }
 
 .buttons{
@@ -136,49 +123,34 @@ a{
     outline: none;
     border: none;
     border-radius: 4px;
-    color: #DDDDDD;
+    color: #EDEDED;
     cursor: pointer;
     background: #F05454;
     padding: 15px;
 }
 
 .loginButton:hover, .registerButton:hover, .updateButton:hover, .deleteButton:hover{
-    background: light-dark(#222831, #DDDDDD);
+    background: light-dark(#30475E, #EDEDED);
     color: #F05454;
 }
 
-.backButton, .logoutButton{
+.backButton, .logoutButton, .editButton{
     outline: none;
-    border: none;
     border-radius: 4px;
-    color: #DDDDDD;
+    color: light-dark(#30475E, #DDDDDD);
     cursor: pointer;
-    background: #30475E;
+    background: light-dark(#DDDDDD, #30475E);
     padding: 15px;
+    border: 1px solid light-dark(#30475E, #DDDDDD);
 }
 
-.backButton:hover, .logoutButton:hover{
-    background: light-dark(#222831, #DDDDDD);
-    color: light-dark(#DDDDDD, #30475E);
-}
-
-.editButton{
-    outline: none;
-    border: none;
-    border-radius: 4px;
-    color: light-dark(#DDDDDD, #30475E);
-    cursor: pointer;
-    background: light-dark(#222831, #DDDDDD);
-    padding: 15px;
-}
-
-.editButton:hover{
-    background: light-dark(#30475E, #30475E);
-    color: #DDDDDD;
+.backButton:hover, .logoutButton:hover, .editButton:hover{
+    background: light-dark(#30475E, #EDEDED);
+    color: light-dark(#EDEDED, #30475E);
 }
 
 @media (max-width: 945px){
-    .image-div{
+    .image-div img{
         display: none;
     }
 
@@ -192,11 +164,17 @@ a{
 }
 
 @media (max-width: 495px){
-    .head-div, .form{
-        width: 70%;
+    .auth-text{
+        top: 20px;
+        left: 20px;
     }
 
-    .buttons{
-        width: 70%;
+    .form-div, .buttons-div{
+        justify-content: start;
+        padding-top: 40%;
+    }
+
+    .head-div, .form, .buttons{
+        width: 100%;
     }
 }

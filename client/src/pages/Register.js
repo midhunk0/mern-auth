@@ -44,6 +44,7 @@ function Register(){
             <div className="image-div">
                 <img src="./assets/background.jpg" alt="background"/>
             </div>
+            <h1 className="auth-text">Auth.</h1>         
             <div className="form-div">
                 <div className="head-div">
                     <h1>Create a new account</h1>
