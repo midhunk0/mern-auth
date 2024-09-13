@@ -73,12 +73,6 @@ export const AuthProvider = ({ children }) => {
         }
     };
 
-    useEffect(()=>{
-        if(token && !user){
-            fetchProfile();
-        }
-    }, [])
-
     const logout = async() => {
         try{
             const response=await fetch(`${API_URL}/logout`, {

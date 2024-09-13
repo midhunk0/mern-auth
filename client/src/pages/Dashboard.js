@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 // @ts-nocheck
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
@@ -9,11 +10,8 @@ const Dashboard=()=>{
     const { user, fetchProfile, logout, deleteAccount }=useAuth();
 
     useEffect(()=>{
-        const getProfile=async()=>{
-            await fetchProfile();
-        }
-        getProfile();
-    }, [fetchProfile]);
+        fetchProfile();
+    }, []);
 
     const toEdit=()=>{
         navigate("/edit");
